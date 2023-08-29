@@ -53,7 +53,7 @@ function writtenmsg(){
     chatarea.insertAdjacentHTML('beforeend',message)
     textarea.focus()
     textarea.rows = 1
-    initmsg.style.display = 'none'
+    // initmsg.style.display = 'none'
     scrollbottom()
 }
 // autoreply
@@ -68,7 +68,7 @@ function autoreply(){
     textarea.rows = 1
     textupp()
     textarea.value = ''
-    initmsg.style.display = 'none'
+    // initmsg.style.display = 'none'
     scrollbottom()
 }
 
@@ -84,13 +84,25 @@ function scrollbottom() {
 function reply(){
     let txt = textarea.value.toUpperCase()
     if (txt === 'HI' || txt === 'HAI'){
-        return "Hi i am fridy how can i help you Today?"
+        return "How are you?"
     }
-    else if( txt === "WHAT IS TIME NOW")
+    else if(txt === "FINE" || txt === "GOOD") {
+        return "I'm glad to here that! If you have any question ask to me?"
+    }
+    else if(txt === "NOT GOOD" || txt === "NOT WELL") {
+        return "I'm sorry to here that! If you'd like, you can share more?"
+    }
+    else if(txt === "HOW ARE YOU" || txt === "ABOUT YOU" || txt === "YOU ") {
+        return "I'm just a computer program, so I don't have feelings, but I'm here and ready to help you!"
+    }
+    else if(txt === "WHO ARE YOU") {
+        return "I'm just a computer program, but I'm here and ready to help you!"
+    }
+    else if( txt === "WHAT'S TIME NOW" || txt === "WHAT'S THE TIME" || txt === "WHAT'S THE TIME NOW" || txt === 'WHAT IS THE TIME ')
     {
         return `${addZero(today.getHours())}:${addZero(today.getMinutes())}`
     }
-    else if( txt === "TODAY DATE")
+    else if( txt === "TODAY DATE" || txt === "WHAT'S THE DATE" || txt === "WHAT'S THE DATE TODAY" )
     {
         return `${addZero(today.getDate())}:${addZero(today.getMonth()+1)}:${addZero(today.getFullYear())}`
     }
